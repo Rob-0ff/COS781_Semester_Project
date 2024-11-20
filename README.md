@@ -28,7 +28,7 @@ This will ensure that the code executes correctly and all necessary outputs are 
 
 ## Data Loading
 
-The data is loaded from Kaggle datasets using kagglehub and processed to create user and game features:
+The data is automatically downloaded from Kaggle datasets using kagglehub and processed to create user and game features:
 
 ```
 data_original, steam_descriptions_original = load_data()
