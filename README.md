@@ -10,7 +10,23 @@ Make sure you have the following dependencies installed:
 pip install pandas scikit-learn kagglehub numpy matplotlib seaborn time tqdm
 ```
 
-# Data Loading
+# Running the Code
+
+To run the code, follow these steps:
+
+1. Import the `.ipynb` (Jupyter notebook) file into a platform that supports running Jupyter notebooks, such as [Google Colab](https://colab.research.google.com/) or Jupyter Notebook locally.
+2. Once the notebook is open, make sure to run all cells sequentially to ensure the environment is set up and all dependencies are loaded correctly.
+
+In Google Colab:
+
+- Upload the `.ipynb` file via the _File > Upload notebook_ option or use the _Google Drive_ integration to open the notebook directly.
+- After uploading, click on the _Runtime > Run all_ to execute all the cells in the notebook.
+
+This will ensure that the code executes correctly and all necessary outputs are generated.
+
+# Code explanation
+
+## Data Loading
 
 The data is loaded from Kaggle datasets using kagglehub and processed to create user and game features:
 
@@ -20,7 +36,7 @@ data = data_original.copy()
 steam_descriptions = steam_descriptions_original.copy()
 ```
 
-# Exploratory Data Analysis (EDA)
+## Exploratory Data Analysis (EDA)
 
 Perform EDA to understand the dataset:
 
@@ -34,7 +50,7 @@ plot_purchase_vs_num_bought(user_features)
 plot_user_distribution(user_features)
 ```
 
-# Feature Engineering and Normalization
+## Feature Engineering and Normalization
 
 Create new inferred characteristics and normalize data:
 
@@ -45,7 +61,7 @@ game_features = normalise_data(game_features)
 user_features = normalise_data(user_features)
 ```
 
-# Dimensionality Reduction and Clustering
+## Dimensionality Reduction and Clustering
 
 Use PCA for dimensionality reduction and KMeans for clustering:
 
@@ -54,7 +70,7 @@ user_features, game_features = perform_PCA(user_features, game_features)
 user_features, game_features = perform_KMeans(user_features=user_features, game_features=game_features, seed=seed)
 ```
 
-# Regression Modeling
+## Regression Modeling
 
 Build and evaluate a regression model to predict playtime:
 
@@ -67,7 +83,7 @@ model = regression_model(data_copy, seed)
 random_testing(data_copy, model, game_features)
 ```
 
-# Game Recommendations
+## Game Recommendations
 
 Recommend games to users based on similar user clusters and game playtime:
 
@@ -81,7 +97,7 @@ for user, details in recommendations.items():
 print(f"User {user} (Cluster {details['user_cluster']}): Recommended Games - {details['recommended_games']} in Clusters {details['game_clusters']}")
 ```
 
-# Functions
+## Functions
 
 - `load_data()`: Load Steam games data from Kaggle.
 - `perform_EDA(data)`: Perform exploratory data analysis.
