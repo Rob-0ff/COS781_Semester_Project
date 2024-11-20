@@ -2,6 +2,10 @@
 
 This project explores and analyzes user behavior from Steam video games data, performs data preprocessing, and builds machine learning models to recommend games to users. The workflow includes data loading, exploratory data analysis (EDA), feature engineering, dimensionality reduction, clustering, and regression modeling.
 
+# Contents of .zip file
+
+This zip folder simply contains the README and source code (Jupyter notebook) created for the COS781 Semester project.
+
 ## Installation
 
 Make sure you have the following dependencies installed:
